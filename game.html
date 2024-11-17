@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine le Nombre</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('./game\ \(2\).png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/* General styling */
+#result {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Style for "big" guesses */
+.big {
+    color: red;
+    font-weight: bold;
+}
+
+/* Style for "close" guesses */
+.close {
+    color: blue;
+    font-weight: bold;
+}
+
+/* Style for correct guess */
+.correct {
+    background-color: green;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    padding: 10px;
+}
+
+#game-container {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 40%;
+    height: 40px;
+    font-size: 30px;
+    border: none; /* Remove default border */
+    outline: none;
+    background-color: rgb(179, 217, 255); 
+    transition: background-color 1s ease;/* Remove the outline (focus ring) */
+}
+input:focus {
+    background-color: rgb(81, 168, 255); /* Remove the outline (focus ring) */
+    border: none; /* Ensure no border appears when focused */
+    outline: none; /* Prevent any outline when focused */
+}
+button {
+    padding: 10px 20px;
+    background-color: #167000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+#attempts {
+        font-size: 24px;
+        background-color: rgba(6, 255, 143, 0.267);
+    }
+p{
+    font-size: 25px;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #45a049;
+}
+.h1{
+    background-color: rgb(255, 119, 0);
+    color: white;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <div id="game-container" action="javascript:void(0)";>
+        <h1 class="h1">الحاسوب سيخمن عددا وعليك ايجاده</h1>
+        <h1> باتباع المؤشرات في الاسفل</h1>
+        <p>ادخل عدد بين 1 و 100&#129300;</p> 
+
+        <!-- Wrap the input and button inside a form -->
+        <form id="guessForm" action="javascript:void(0);">
+            <input type="number" id="userGuess" min="1" max="100" required>
+            <button type="submit" id="submitGuess">تاكيد</button>
+        </form>
+
+        <p id="result"></p>
+        <p id="attempts"></p>
+    </div>
+   <script src="./game.js"></script>
+</body>
+</html>
